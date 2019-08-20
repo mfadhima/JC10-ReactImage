@@ -15,3 +15,8 @@ class App extends Component {
 }
 
 export default App
+
+/*
+    JSX adalah sytax yg disediakan oleh Javascript
+    untuk memudahkan developer menyusun html di javascript
+*/
