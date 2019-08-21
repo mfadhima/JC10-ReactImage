@@ -7,28 +7,14 @@ class SearchBar extends Component {
         keyword: ''
     }
 
+    // running ketika tekan enter
     onSubmitForm = (e) => {
         e.preventDefault()
 
-        Axios.get(
-            'https://api.unsplash.com/search/photos',
-            {
-                headers: {
-                    Authorization: `Client-ID 7ac56375d5fc956921be9e3f6a21d28cab77afc8d8814c389e32eb5022c9c274`
-                },
-                params: {
-                    query: this.state.keyword
-                }
-            }
-        ).then((res) => {
-            // jika berhasil
-            console.log(res.data.results)
-        }).catch((err) => {
-            // jika gagal
-            console.log(err.message);
-        })
+        this.props.asd(this.state.keyword)    
     }
 
+    // running ketika ada perubahan data di text box 
     onChangeText = (e) => {
         // Menyimpan text dari user di state.keyword
         this.setState({keyword: e.target.value})
