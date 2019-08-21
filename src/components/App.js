@@ -11,8 +11,10 @@ class App extends Component {
         images: []
     }
 
+
     // function yg akan mengambil keyword dari SearchBar, digunakan untuk request gambar
     onSearchSubmit = (keyword) => {
+
         Axios.get(
             'https://api.unsplash.com/search/photos',
             {
@@ -25,15 +27,17 @@ class App extends Component {
             }
         ).then((res) => {
             // jika berhasil
-            console.log(res.data.results[0].urls.full)
             this.setState({images:res.data.results})
         }).catch((err) => {
             // jika gagal
             console.log(err.message);
         }) 
+
     }
 
+
     render() {
+
         return (
             <div className="container">
                 <SearchBar asd={this.onSearchSubmit} />
@@ -43,6 +47,7 @@ class App extends Component {
     }
 
 }
+
 
 export default App
 
